@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+}
+.ml-3 {
+    margin-left: 1rem; /* Adjust the value as needed */
+}
+
+.mt-1 {
+    margin-top: 0.25rem; /* Adjust the value as needed */
+}
+
+.comment-box {
+    padding: 15px 35px;
+    background-color: #f0f0f0;
+}

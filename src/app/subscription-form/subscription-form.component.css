@@ -1,0 +1,17 @@
+.card{
+    background-color: var(--secondary-color);
+    width: 1300px;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between the divs */
+    align-items: center; /* Aligns items vertically in the center */
+}
+.form-group {
+    flex: 1; /* Allows the divs to grow and shrink as needed */
+    margin: 0 10px; /* Adds some margin between the divs */
+}
+
+.subs-text{
+    width: 500px;
+}
