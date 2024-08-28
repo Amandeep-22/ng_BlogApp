@@ -2,15 +2,15 @@
     <div class="row">
         <div class="col-md-9">
             <div class="card shadow-effect">
-                <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg" alt="" class="card-img-top img-fluid">
+                <img src="{{postdata.postImgPath}}" alt="" class="card-img-top img-fluid">
                 <div class="card-body">
-                    <small class="bg-light text-danger text-center"> Design </small>
-                    <small class="bg-light text-success text-center ml-2"> Featured </small>
-                    <small class="bg-light text-info text-center ml-2"> Views - 100,567 </small>
-                    <small class="bg-light text-warning text-center ml-2"> LAST UPDATED - SEP, 2023 </small>
+                    <small class="bg-light text-danger text-center"> {{postdata.category.category}} </small>
+                    <small class="bg-light text-success text-center ml-2" *ngIf="postdata.isFeatured"> Featured </small>
+                    <small class="bg-light text-info text-center ml-2"> Views - {{postdata.views}} </small>
+                    <small class="bg-light text-warning text-center ml-2"> LAST UPDATED - {{postdata.createdAt.toMillis() | date}} </small>
 
-                    <h1 class="mt-3 mb-3">HOW TO START A BLOG IN 2024 EDITED NEW CATEGORY</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat similique distinctio repellat vero debitis? Quibusdam et necessitatibus, esse doloribus sit commodi minus fugit autem eligendi dicta totam voluptas earum soluta.</p>
+                    <h1 class="mt-3 mb-3">{{postdata.title}}</h1>
+                    <p [innerHTML]="postdata.content"></p>
                 </div>
             </div>
 
@@ -18,9 +18,9 @@
             <app-comment-list></app-comment-list>
         </div>
         <div class="col-md-3">
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
+            <div *ngFor="let similarpost of similarPostArray">
+                <app-post-card [postData]="similarpost"></app-post-card>
+            </div>
         </div>
     </div>
 </div>

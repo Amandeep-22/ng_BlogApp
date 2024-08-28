@@ -1,14 +1,14 @@
-<div class="card shadow-effect">
+<div class="card shadow-effect" *ngIf="postData" [routerLink]="['/post',postData.id]">
 
-    <img src="https://media.istockphoto.com/id/171292804/photo/painted-hands-sign-heart.jpg?s=612x612&w=0&k=20&c=m3Pqlj7lxsSMVp68corQ8sGQwtnbMX1HnD98Ja9Beu4=" alt = "post-image" class="card-img-top">
+    <img src="{{postData.data.postImgPath}}" alt = "post-image" class="card-img-top">
 
     <div class="card-body">
 
-        <small class="bg-light text-danger text-center"> Design </small>
-        <small class="bg-light text-success text-center ml-3"> Featured </small>
-        <small class="bg-light text-info text-center ml-3"> Views 100,256 </small>
-        <h5 class="mt-1"> How to start a Blog in 2024 Edited New Category</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit rerum vel. Fugit recusandae perspiciatis ipsum. Corrupti tempora temporibus porro. Et qui provident ipsum quod voluptatum. Perferendis impedit ut officia!</p>
-        <small class="bg-light text-warning text-center"> Last updated July, 2024 </small>
+        <small class="bg-light text-danger text-center"> {{postData.data.category.category}} </small>
+        <small class="bg-light text-success text-center ml-3" *ngIf="postData.data.isFeatured"> Featured </small>
+        <small class="bg-light text-info text-center ml-3"> Views - {{ postData.data.views}} </small>
+        <h5 class="mt-1">{{postData.data.title}}</h5>
+        <p>{{postData.data.exerpt}}</p>
+        <small class="bg-light text-warning text-center"> Last updated - {{postData.data.createdAt.toMillis() | date }} </small>
     </div>
 </div>
