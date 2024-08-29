@@ -3,7 +3,14 @@
         <div class="text-center mt-3 mb-5">
             <h3>SUBSCRIPTION FORM</h3>
             <p class="m-auto subs-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate veniam, amet quaerat rem laudantium at culpa asperiores temporibus numquam iusto veritatis praesentium earum expedita quos dolore libero placeat itaque vel.</p>
-            <form class="form-inline mb-5 mt-5" #subForm= ngForm (ngSubmit)="onSubmit(subForm.value)">
+            
+            <div class="alert alert-danger mt-3" *ngIf="isEmailError">
+                Email is already in use
+            </div>
+            <div class="alert alert-info mt-3" *ngIf="isSubscirbed">
+                Thank You for subscribing to our newsletter service. Stay tuned for Awesome blog posts...
+            </div>
+            <form class="form-inline mb-5 mt-5" #subForm= ngForm (ngSubmit)="onSubmit(subForm.value)" *ngIf="!isSubscirbed">
                 <div class="form-container">
                     <div class="form-group col-md-5">
                         <input 
