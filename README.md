@@ -1,6 +1,9 @@
 # BlogApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+BlogApp link - https://ng-blog-app-xi.vercel.app/
+Admin Dasboard link - https://ng-blog-app-dashboard.vercel.app/
+(Login - amandeep@gmail.com Paasword- 12345678)
 
 ## Development server
 
